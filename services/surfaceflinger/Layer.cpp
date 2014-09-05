@@ -1338,7 +1338,7 @@ bool Layer::isIntOnly() const
     const sp<GraphicBuffer>& activeBuffer(mActiveBuffer);
     if (activeBuffer != 0) {
         uint32_t usage = activeBuffer->getUsage();
-        if(usage & GRALLOC_USAGE_PRIVATE_INTERNAL_ONLY)
+        if(usage)
             return true;
     }
     return false;

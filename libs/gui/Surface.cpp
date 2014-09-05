@@ -809,8 +809,8 @@ status_t Surface::lock(
         // we're intending to do software rendering from this point
         // Do not overwrite the mReqUsage flag which was set by the client
 #ifdef QCOM_BSP
-        setUsage(mReqUsage & GRALLOC_USAGE_PRIVATE_EXTERNAL_ONLY |
-                mReqUsage & GRALLOC_USAGE_PRIVATE_INTERNAL_ONLY |
+        setUsage(mReqUsage |
+                mReqUsage |
                     GRALLOC_USAGE_SW_READ_OFTEN |
                     GRALLOC_USAGE_SW_WRITE_OFTEN);
 #else
